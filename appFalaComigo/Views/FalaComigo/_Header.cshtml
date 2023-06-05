@@ -1,0 +1,28 @@
+﻿@model appFalaComigo.Models.FalaComigoModel
+
+<div class="navbar navbar-inverse  navbar-fixed-top">
+    <div class="container">
+        <div class="fala-comigo-header">
+            @Html.ActionLink("Fala Comigo", "Index", "FalaComigo", new { area = "" }, new { @class = "navbar-brand" })
+
+            <div class="voice-select">
+                <label for="voiceSelect">Escolha uma voz</label>
+                <select id="voiceSelect"></select>
+            </div>
+
+            <div class="dropdown profile-button">
+                <button type="button" class="btn navbar-btn profile-button dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img alt="profile image" class="header-profile-img" src="..\Images\user_icon.svg" />
+                </button>
+
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    @foreach (var user in Model.Users)
+                    {
+                        <span class="dropdown-item selected-user" href="#" data-user-id="@user.UsuarioId">@user.Nome</span>
+                        <div class="dropdown-divider"></div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

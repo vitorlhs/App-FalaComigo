@@ -1,0 +1,32 @@
+﻿<div class="modal fade" id="editCardModal" tabindex="-1" role="dialog" aria-labelledby="editCardModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editCardModalTitle">Editar Cartão</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <input type="hidden" id="cardId" value="">
+                    <div class="form-group">
+                        <label for="editCardName" class="col-form-label">Nome do Cartão:</label>
+                        <input type="text" class="form-control" id="editCardName">
+                    </div>
+
+                    <div class="form-group mx-sm-3 mb-2 new-board-searchImage-field">
+                        <label for="editCardSearchImage" class="col-form-label">Escolher Imagem:</label>
+                        <input type="text" class="form-control search-text" id="editCardSearchImage" placeholder="Pesquisar...">
+                    </div>
+                    <button type="button" class="btn btn-primary mb-2 edit-card-searchImage-button new-board-searchImage-button search-image-button" data-image-id="0">Buscar Imagem</button>
+                    <i class="fa-solid fa-circle-check fa-2xl select-image-check-icon-card"></i>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-primary" id="buttonEditCard">Editar Cartão</button>
+            </div>
+        </div>
+    </div>
+</div>

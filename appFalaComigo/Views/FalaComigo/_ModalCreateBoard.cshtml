@@ -1,0 +1,53 @@
+﻿@using appFalaComigo.Util
+@{
+    ViewBag.Title = "_ModalCreateBoard";
+}
+
+
+<div class="modal fade" id="createBoardModal" tabindex="-1" role="dialog" aria-labelledby="createBoardModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="createBoardModalTitle">Criar Nova Prancha</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+
+                    <div class="form-group">
+                        <label for="newBoardName" class="col-form-label">Nome da Prancha:</label>
+                        <input type="text" class="form-control" id="newBoardName">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="newBoardDiscription" class="col-form-label">Descrição da Prancha</label>
+                        <input type="text" class="form-control" id="newBoardDiscription">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="newBoardSelectCollor">Selecione a Cor da Prancha</label>
+                        <select class="form-control" id="newBoardSelectCollor">
+                            @foreach (CorEnum.Cor collor in Enum.GetValues(typeof(CorEnum.Cor)))
+                            {
+                                <option>@CorEnum.GetCorString(collor)</option>
+                            }
+                        </select>
+                    </div>
+
+                    <div class="form-group mx-sm-3 mb-2 new-board-searchImage-field">
+                        <label for="newBoardSearchImage" class="col-form-label">Escolher Imagem da Capa:</label>
+                        <input type="text" class="form-control search-text" id="newBoardSearchImage" placeholder="Pesquisar...">
+                    </div>
+                    <button type="button" class="btn btn-primary mb-2 new-board-searchImage-button search-image-button" data-image-id="0">Buscar Imagem</button>
+                    <i class="fa-solid fa-circle-check fa-2xl select-image-check-icon-card" style="display: none;"></i>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-primary" id="buttonCreateBoard">Criar Prancha</button>
+            </div>
+        </div>
+    </div>
+</div>

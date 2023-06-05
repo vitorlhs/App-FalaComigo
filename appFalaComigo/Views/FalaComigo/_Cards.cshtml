@@ -1,0 +1,33 @@
+﻿@model appFalaComigo.Models.CardsModel
+
+<div class="cards-container" data-pranchaId="@Model.PranchaId">
+    <div class="sentence-container">
+        <span class="title-sentence">Monte sua frase</span>
+        <div id="sentenceText"></div>
+        <div class="speak-button">
+            <button class="btn btn-success" id="speakButton">Ler em voz alta</button>
+            <button class="btn btn-primary" id="clearSentenceButton">Limpar frase</button>
+        </div>
+    </div>
+    <div class="card-spacing"></div>
+    @foreach (var card in Model.Cards)
+    {
+        <div class="card existing-card" data-cardId="@card.CardModel.CartaoId">
+            <img src="@card.ImageUrl" alt="card image" class="card-image">
+            <div class="card-information">
+                <h4>
+                    <b>@card.CardModel.Nome</b>
+                    <i class="fa-regular fa-pen-to-square edit-card" data-cardId="@card.CardModel.CartaoId"></i>
+                    <i class="fa-solid fa-trash trash-icon delete-card" data-cardId="@card.CardModel.CartaoId"></i>
+                </h4>
+            </div>
+        </div>
+    }
+
+    <div id="createCard" class="card">
+        <img src="..\Images\create_icon.svg" alt="boardImage" class="card-image">
+        <div class="card-information">
+            <h4><b>Criar Novo Cartão</b></h4>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+﻿@model appFalaComigo.Models.FalaComigoModel
+@using appFalaComigo.Util
+
+@{
+    ViewBag.Title = "_Boards";
+}
+<div class="boards-container">
+    @foreach (var board in Model.Boards)
+    {
+        <div class="board existing-board" data-boardId="@board.PranchaId">
+            <img src="@board.BoardPictogram.image" alt="boardImage" class="board-image" onclick="RenderBoardCards(@board.PranchaId)">
+            <div class="board-information @CorEnum.GetCorString(board.Cor)">
+                <h4>
+                    <b>@board.Nome</b>
+                    <i class="fa-regular fa-pen-to-square edit-board" data-boardId="@board.PranchaId"></i>
+                    <i class="fa-solid fa-trash trash-icon delete-board" data-boardId="@board.PranchaId"></i>
+                </h4>
+                <p>@board.Descricao</p>
+            </div>
+        </div>
+    }
+
+    <div id="createBoard" class="board">
+        <img src="..\Images\create_icon.svg" alt="boardImage" class="board-image">
+        <div class="board-information">
+            <h4><b>Criar Nova Prancha</b></h4>
+        </div>
+    </div>
+</div>

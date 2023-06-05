@@ -1,0 +1,26 @@
+﻿@model appFalaComigo.Models.FalaComigoModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<body>
+    <div id="loading" style="display: none; z-index: 9999;">
+        <img id="loading-image" src="..\Images\loading_gif.gif" alt="Loading..." />
+    </div>
+
+    <div class="cards-placeholder" style="display: none;">
+
+    </div>
+
+    @Html.Partial("_Header", @Model)
+
+    @Html.Partial("_Boards", @Model)
+    @Html.Partial("_ModalCreateBoard")
+    @Html.Partial("_ModalEditBoard")
+    @Html.Partial("_ModalCreateCard")
+    @Html.Partial("_ModalEditCard")
+    @Html.Partial("_ModalSelectImage")
+</body>
+
